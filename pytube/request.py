@@ -53,8 +53,6 @@ def _execute_request(
         if not isinstance(data, bytes):
             data = bytes(json.dumps(data), encoding="utf-8")
     if url.lower().startswith("http"):
-        cookie_str = "; ".join([f"{cookie.name}={cookie.value}" for cookie in firefox_cookies])
-        base_headers["Cookie"] = cookie_str
         request = Request(url, headers=base_headers, method=method, data=data)
     else:
         raise ValueError("Invalid URL")
