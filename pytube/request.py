@@ -15,6 +15,36 @@ from pytube.helpers import regex_search
 logger = logging.getLogger(__name__)
 default_range_size = 9437184  # 9MB
 
+# adding cookies to requests
+YOUTUBE_COOKIES = {
+    'GPS': '1',
+    'VISITOR_INFO1_LIVE': 'KcJKG0JPUAo',
+    'VISITOR_PRIVACY_METADATA': 'CgJBRRIEGgAgRg%3D%3D',
+    'PREF': 'f4=4000000&f6=40000000&tz=Asia.Dubai&f7=100',
+    'SID': 'g.a000gghJeqASeH6ke6d2ujxeFO7rK4DZ0rLtBbJ2Dk0QW2Y4PLN3EK5bQn6TRR7ThbjpISo7mQACgYKAeYSAQASFQHGX2MiOaT8vyXbSM'
+           'BDmYGw9zGooBoVAUF8yKqjDfqQRyNyYNbZ-8EeTpnN0076',
+    '__Secure-1PSIDTS': 'sidts-CjEBYfD7Z8iZfkujC8Ikav5KIYkWZfhU4MBFU75a3ZH-5MBAv2kfHoflyspHkHfM3eu7EAA',
+    '__Secure-3PSIDTS': 'sidts-CjEBYfD7Z8iZfkujC8Ikav5KIYkWZfhU4MBFU75a3ZH-5MBAv2kfHoflyspHkHfM3eu7EAA',
+    '__Secure-1PSID': 'g.a000gghJeqASeH6ke6d2ujxeFO7rK4DZ0rLtBbJ2Dk0QW2Y4PLN3HXUXKtzonToFnPNfE-s47QACgYKAX0SAQASFQHGX2M'
+                      'iajV0WaFknwKSgxYH4PsoMBoVAUF8yKqaYbwLKK7L-As4aDHGi3GF0076',
+    '__Secure-3PSID': 'g.a000gghJeqASeH6ke6d2ujxeFO7rK4DZ0rLtBbJ2Dk0QW2Y4PLN3bcUeH8bYsWiGW9Oq9Pa0PAACgYKASYSAQASFQHGX2M'
+                      'iplFnlqIl9hVuZJ_PI0BnHRoVAUF8yKrMg7AcrpbH88cGzgc7VM750076',
+    'HSID': 'AxqgS7xdcONOMyr12',
+    'SSID': 'ATZuYj0OQUwSCLupv',
+    'APISID': 'g-PQOqK1Dw5BJgYp/Aq5nOoflDSlnbDRb3',
+    'SAPISID': 'xl7sOsfUVwS6N2Nv/AER0YJUJY66E03mSW',
+    '__Secure-1PAPISID': 'xl7sOsfUVwS6N2Nv/AER0YJUJY66E03mSW',
+    '__Secure-3PAPISID': 'xl7sOsfUVwS6N2Nv/AER0YJUJY66E03mSW',
+    'LOGIN_INFO': 'AFmmF2swRQIhAIZhKx2bquo6dTvFBRl5GykfGGreR8OHykCovsEeGTnZAiABQUFxx9ZM8m-3-lYqU1LkeV2uUB_G42QE8k_ZgtmG'
+                  'ZQ:QUQ3MjNmeTdGcVhoeU1iU3lZczNjcGNJbGNfTWJJUXd6Y3VVRkZzMmVkLXdIX2ZYS1dLLXpWdG13bW9OdVhpUEdWbE1EOGZZW'
+                  'llVVVcwdTIyQWp6UWNsbFd2NHM4a3BjWERQdHRXU19KanJCbElUVU5UTkVqRXc2MEdtTFhSN2JZMXMxS1FHTkRlc1pvcUpXN2VHS'
+                  'Ut0cnViS2VoT3U0ZE1B',
+    'YSC': 'bGB7gOLbtR4',
+    'SIDCC': 'ABTWhQErPdXEmy5lIS_Shsa0wugInP7Arqn0KXi_UQ5LLU-r-5KD9ypVmfm57ksNqua8ctC1',
+    '__Secure-1PSIDCC': 'ABTWhQHWkjkK3D6573toP5kxobZ4KWx363z-IpBKXwky3rxcMU5XBzp54SCWzXxK9SMYWbx3dQ',
+    '__Secure-3PSIDCC': 'ABTWhQF-w_lAVMR0iWRORdsc7bHPqzzuAb6vfZHFS7DiZxjMmFqPvaUNXtJWqe3sH6AJlKvwMoc',
+}
+YOUTUBE_COOKIES_STRING = '; '.join([f"{name}={value}" for name, value in YOUTUBE_COOKIES.items()])
 
 def _execute_request(
     url,
@@ -23,7 +53,7 @@ def _execute_request(
     data=None,
     timeout=socket._GLOBAL_DEFAULT_TIMEOUT
 ):
-    base_headers = {"User-Agent": "Mozilla/5.0", "accept-language": "en-US,en"}
+    base_headers = {"User-Agent": "Mozilla/5.0", "accept-language": "en-US,en", 'Cookie': YOUTUBE_COOKIES_STRING}
     if headers:
         base_headers.update(headers)
     if data:
@@ -31,6 +61,8 @@ def _execute_request(
         if not isinstance(data, bytes):
             data = bytes(json.dumps(data), encoding="utf-8")
     if url.lower().startswith("http"):
+        cookie_str = "; ".join([f"{cookie.name}={cookie.value}" for cookie in firefox_cookies])
+        base_headers["Cookie"] = cookie_str
         request = Request(url, headers=base_headers, method=method, data=data)
     else:
         raise ValueError("Invalid URL")
