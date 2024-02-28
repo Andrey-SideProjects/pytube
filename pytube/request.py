@@ -17,32 +17,24 @@ default_range_size = 9437184  # 9MB
 
 # adding cookies to requests
 YOUTUBE_COOKIES = {
-    'GPS': '1',
-    'VISITOR_INFO1_LIVE': 'KcJKG0JPUAo',
-    'VISITOR_PRIVACY_METADATA': 'CgJBRRIEGgAgRg%3D%3D',
-    'PREF': 'f4=4000000&f6=40000000&tz=Asia.Dubai&f7=100',
-    'SID': 'g.a000gghJeqASeH6ke6d2ujxeFO7rK4DZ0rLtBbJ2Dk0QW2Y4PLN3EK5bQn6TRR7ThbjpISo7mQACgYKAeYSAQASFQHGX2MiOaT8vyXbSM'
-           'BDmYGw9zGooBoVAUF8yKqjDfqQRyNyYNbZ-8EeTpnN0076',
-    '__Secure-1PSIDTS': 'sidts-CjEBYfD7Z8iZfkujC8Ikav5KIYkWZfhU4MBFU75a3ZH-5MBAv2kfHoflyspHkHfM3eu7EAA',
-    '__Secure-3PSIDTS': 'sidts-CjEBYfD7Z8iZfkujC8Ikav5KIYkWZfhU4MBFU75a3ZH-5MBAv2kfHoflyspHkHfM3eu7EAA',
-    '__Secure-1PSID': 'g.a000gghJeqASeH6ke6d2ujxeFO7rK4DZ0rLtBbJ2Dk0QW2Y4PLN3HXUXKtzonToFnPNfE-s47QACgYKAX0SAQASFQHGX2M'
-                      'iajV0WaFknwKSgxYH4PsoMBoVAUF8yKqaYbwLKK7L-As4aDHGi3GF0076',
-    '__Secure-3PSID': 'g.a000gghJeqASeH6ke6d2ujxeFO7rK4DZ0rLtBbJ2Dk0QW2Y4PLN3bcUeH8bYsWiGW9Oq9Pa0PAACgYKASYSAQASFQHGX2M'
-                      'iplFnlqIl9hVuZJ_PI0BnHRoVAUF8yKrMg7AcrpbH88cGzgc7VM750076',
-    'HSID': 'AxqgS7xdcONOMyr12',
-    'SSID': 'ATZuYj0OQUwSCLupv',
-    'APISID': 'g-PQOqK1Dw5BJgYp/Aq5nOoflDSlnbDRb3',
-    'SAPISID': 'xl7sOsfUVwS6N2Nv/AER0YJUJY66E03mSW',
-    '__Secure-1PAPISID': 'xl7sOsfUVwS6N2Nv/AER0YJUJY66E03mSW',
-    '__Secure-3PAPISID': 'xl7sOsfUVwS6N2Nv/AER0YJUJY66E03mSW',
-    'LOGIN_INFO': 'AFmmF2swRQIhAIZhKx2bquo6dTvFBRl5GykfGGreR8OHykCovsEeGTnZAiABQUFxx9ZM8m-3-lYqU1LkeV2uUB_G42QE8k_ZgtmG'
-                  'ZQ:QUQ3MjNmeTdGcVhoeU1iU3lZczNjcGNJbGNfTWJJUXd6Y3VVRkZzMmVkLXdIX2ZYS1dLLXpWdG13bW9OdVhpUEdWbE1EOGZZW'
-                  'llVVVcwdTIyQWp6UWNsbFd2NHM4a3BjWERQdHRXU19KanJCbElUVU5UTkVqRXc2MEdtTFhSN2JZMXMxS1FHTkRlc1pvcUpXN2VHS'
-                  'Ut0cnViS2VoT3U0ZE1B',
-    'YSC': 'bGB7gOLbtR4',
-    'SIDCC': 'ABTWhQErPdXEmy5lIS_Shsa0wugInP7Arqn0KXi_UQ5LLU-r-5KD9ypVmfm57ksNqua8ctC1',
-    '__Secure-1PSIDCC': 'ABTWhQHWkjkK3D6573toP5kxobZ4KWx363z-IpBKXwky3rxcMU5XBzp54SCWzXxK9SMYWbx3dQ',
-    '__Secure-3PSIDCC': 'ABTWhQF-w_lAVMR0iWRORdsc7bHPqzzuAb6vfZHFS7DiZxjMmFqPvaUNXtJWqe3sH6AJlKvwMoc',
+    "APISID": "g-PQOqK1Dw5BJgYp/Aq5nOoflDSlnbDRb3",
+    "HSID": "AxqgS7xdcONOMyr12",
+    "LOGIN_INFO": "AFmmF2swRQIgNGadrqV707txLHe0VRtutnxNj6JmZTIZK0ZYuhA9qwICIQCWf3NfilcieFrVBINCxvlnAx1D8AjJpq_DfBUN6InpuQ:QUQ3MjNmelpqOU1raXJRWmJFeUFmSDVtcjBubUk3VXpTSUFzTHIwNXJtUk5ndWk1c3JBV0hiMHRrWXVUQW5tdUYtMl9Qc1JMQl9CbHNhWDVYMldQT3pTR1hEX1hKNFZkZnhGaDNvWmNDSlZWbW1XMEFjS2o2WXNVbzE1N19pdjdETDhaWEFhX1Z5bDZGZU1seV9BZUt0TDB3NFcybHQxazNn",
+    "PREF": "f4=4000000&f6=40000000&tz=Asia.Dubai&f7=100",
+    "SAPISID": "xl7sOsfUVwS6N2Nv/AER0YJUJY66E03mSW",
+    "SID": "g.a000gghJeqASeH6ke6d2ujxeFO7rK4DZ0rLtBbJ2Dk0QW2Y4PLN3EK5bQn6TRR7ThbjpISo7mQACgYKAeYSAQASFQHGX2MiOaT8vyXbSMBDmYGw9zGooBoVAUF8yKqjDfqQRyNyYNbZ-8EeTpnN0076",
+    "SIDCC": "ABTWhQGTsgbgbtq-4lCUbSR3xwMZ8WT9m6lCD3wWPi5vL6xiCxaEQd47-EkxS6LeWWbYP7gY2g",
+    "SSID": "ATZuYj0OQUwSCLupv",
+    "VISITOR_INFO1_LIVE": "KcJKG0JPUAo",
+    "VISITOR_PRIVACY_METADATA": "CgJBRRIEGgAgRg%3D%3D",
+    "__Secure-1PAPISID": "xl7sOsfUVwS6N2Nv/AER0YJUJY66E03mSW",
+    "__Secure-1PSID": "g.a000gghJeqASeH6ke6d2ujxeFO7rK4DZ0rLtBbJ2Dk0QW2Y4PLN3HXUXKtzonToFnPNfE-s47QACgYKAX0SAQASFQHGX2MiajV0WaFknwKSgxYH4PsoMBoVAUF8yKqaYbwLKK7L-As4aDHGi3GF0076",
+    "__Secure-1PSIDCC": "ABTWhQF_iTDm2u88E2clJuuFKQFvS_JPzI1LRE9qDjKXKxQjv0F0A3dRe06dolInDcHS2-luJTQ",
+    "__Secure-1PSIDTS": "sidts-CjEBYfD7Z1lOMlUgZzQBWziYRW-r-8c6hY1wZYR3TCqKNdEuKAWKpDQiYYNdYTxw0Q3XEAA",
+    "__Secure-3PAPISID": "xl7sOsfUVwS6N2Nv/AER0YJUJY66E03mSW",
+    "__Secure-3PSID": "g.a000gghJeqASeH6ke6d2ujxeFO7rK4DZ0rLtBbJ2Dk0QW2Y4PLN3bcUeH8bYsWiGW9Oq9Pa0PAACgYKASYSAQASFQHGX2MiplFnlqIl9hVuZJ_PI0BnHRoVAUF8yKrMg7AcrpbH88cGzgc7VM750076",
+    "__Secure-3PSIDCC": "ABTWhQGdkYXZK1IrN8M18EWEauuWZwEOxDSgtxCrjMozPe0F42ZKRVkQkmKPHZzQEghqIN8BpHs",
+    "__Secure-3PSIDTS": "sidts-CjEBYfD7Z1lOMlUgZzQBWziYRW-r-8c6hY1wZYR3TCqKNdEuKAWKpDQiYYNdYTxw0Q3XEAA",
 }
 YOUTUBE_COOKIES_STRING = '; '.join([f"{name}={value}" for name, value in YOUTUBE_COOKIES.items()])
 
@@ -53,7 +45,7 @@ def _execute_request(
     data=None,
     timeout=socket._GLOBAL_DEFAULT_TIMEOUT
 ):
-    base_headers = {"User-Agent": "Mozilla/5.0", "accept-language": "en-US,en", 'Cookie': YOUTUBE_COOKIES_STRING}
+    base_headers = {"User-Agent": "Chrome/122.0.0.0", "accept-language": "en-US,en", 'Cookie': YOUTUBE_COOKIES_STRING}
     if headers:
         base_headers.update(headers)
     if data:
